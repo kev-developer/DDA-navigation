@@ -1,10 +1,5 @@
 package com.example.navigation
 
-import android.content.Intent
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,27 +20,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.navigation.ui.theme.NavigationTheme
-
-class FormActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            NavigationTheme {
-                FormScreen(
-                    onBack = { finish() },
-                    onNavigateToGreeting = { name ->
-                        val intent = Intent(this, GreetingActivity::class.java).apply {
-                            putExtra("USER_NAME", name)
-                        }
-                        startActivity(intent)
-                    }
-                )
-            }
-        }
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
